@@ -38,10 +38,12 @@ aside {
   padding: 16px 8px;
   color: #555;
   background-color: #eee;
+  border-radius: 8px;
 }
 
 .instructions p {
   padding: 0 8px;
+  line-height: 1.8;
 }
 
 article {
