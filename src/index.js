@@ -1,13 +1,19 @@
-import React, { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
+function onClick() {
+  console.log('hello, world!!!');
+}
 
-import App from './App';
+function attachClickHandlerToButton() {
+  console.log('attachClickHandlerToButton called');
+  const button = document.getElementById('add-button');
+  button.addEventListener('click', onClick);
+}
 
-const rootElement = document.getElementById('root');
-const root = createRoot(rootElement);
+function onLooooad() {
+  console.log('onLooooad called');
+  attachClickHandlerToButton();
+}
 
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+document.addEventListener('load', onLooooad); // This actually doesn't work
+
+// This isn't usually needed, but Stackblitz is doing crazy magic that makes this required (and actually means that line 20 doesn't work)
+attachClickHandlerToButton();
