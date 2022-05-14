@@ -1,15 +1,20 @@
 <html>
   <body>
     <header>
-      <h1>Cambridge Consultants' Amazing To-Do List</h1>
-      <p>
-        Feel free to play around with all the code here: this is your own
-        personal "fork" of our project. Don't worry - you can always get back to
-        a working example by selecting a different "branch" from the dropdown at
-        the top of the sidebar on the left.
-      </p>
+      <div class="max-width-wrapper">
+        <img
+          src="https://www.cambridgeconsultants.com/themes/custom/cc_theme/logo-2022-small.svg"
+        />
+        <h1>Cambridge Consultants' Amazing To-Do List</h1>
+        <p>
+          Feel free to play around with all the code here: this is your own
+          personal "fork" of our project. Don't worry - you can always get back
+          to a working example by selecting a different "branch" from the
+          dropdown at the top of the sidebar on the left.
+        </p>
+      </div>
     </header>
-    <article>
+    <article class="max-width-wrapper">
       <p>
         Completed <span id="completed-count">3</span> out of
         <span id="total-count">5</span>
@@ -36,9 +41,10 @@
           <span>Get banned from Sheffield Uni for ever</span>
         </li>
       </ul>
-
-      <input id="add-textbox" />
-      <button id="add-button">Add</button>
+      <form id="add-todo">
+        <input id="add-textbox" />
+        <button id="add-button">Add</button>
+      </form>
     </article>
   </body>
 </html>

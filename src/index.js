@@ -17,3 +17,6 @@ document.addEventListener('load', onLooooad); // This actually doesn't work
 
 // This isn't usually needed, but Stackblitz is doing crazy magic that makes this required (and actually means that line 20 doesn't work)
 attachClickHandlerToButton();
+
+// Magic to get Stackbliz to pick up stylesheet
+import './style.css';
