@@ -3,6 +3,7 @@ function onAdd(event) {
 
   const checkbox = document.createElement('input');
   checkbox.setAttribute('type', 'checkbox');
+  checkbox.addEventListener('change', onCheckboxClick);
 
   const span = document.createElement('span');
   const textbox = document.getElementById('add-textbox');
@@ -27,15 +28,35 @@ function attachSubmitHandlerToForm() {
   form.addEventListener('submit', onAdd);
 }
 
+function onCheckboxClick(event) {
+  console.log('onCheckboxClicked called');
+  const completedCountSpan = document.getElementById('completed-count');
+  let newCount = parseInt(completedCountSpan.innerText);
+  if (event.currentTarget.checked) {
+    newCount += 1;
+  } else {
+    newCount -= 1;
+  }
+  completedCountSpan.innerText = newCount;
+}
+
+function attachCompletionHandlerToExistingCheckboxes() {
+  const checkBoxes = document.getElementsByClassName('checkbox');
+  console.log(checkBoxes);
+  for (let checkBox of checkBoxes) {
+    checkBox.addEventListener('change', onCheckboxClick);
+  }
+}
+
 function onLoad() {
-  console.log('onLooooad called');
   attachSubmitHandlerToForm();
+  attachCompletionHandlerToExistingCheckboxes();
 }
 
 document.addEventListener('load', onLoad); // This actually doesn't work with react-scripts
 
-// This isn't usually needed, but Stackblitz is doing crazy magic that makes this required (and actually means that line 20 doesn't work)
-attachSubmitHandlerToForm();
+// This isn't usually needed, but react-scripts is doing crazy magic that makes this required (and actually means that line 20 doesn't work)
+onLoad();
 
-// Magic to get Stackbliz to pick up stylesheet
+// Magic to get react-scripts to pick up stylesheet
 import './style.css';
