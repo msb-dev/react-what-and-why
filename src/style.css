@@ -58,7 +58,9 @@ ul {
 li {
   border-bottom: 1px #eee solid;
   padding: 8px 0;
-}
+  display: flex;
+  justify-content: space-between
+;}
 
 li:first {
   border-top: 1px #eee solid;
@@ -101,4 +103,8 @@ li:first {
   width: 100%;
   border: none;
   border-radius: 8px 0 0 8px;
+}
+
+.delete {
+  margin-left: auto;
 }

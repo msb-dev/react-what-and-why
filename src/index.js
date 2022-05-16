@@ -10,9 +10,15 @@ function onAdd(event) {
   span.innerText = textbox.value;
   textbox.value = '';
 
+  const button = document.createElement('button');
+  button.className = 'delete';
+  button.innerText = 'Delete';
+  button.addEventListener('click', onDelete);
+
   const li = document.createElement('li');
   li.appendChild(checkbox);
   li.appendChild(span);
+  li.appendChild(button);
 
   const ul = document.getElementById('list');
   ul.appendChild(li);
@@ -23,13 +29,11 @@ function onAdd(event) {
 }
 
 function attachSubmitHandlerToForm() {
-  console.log('attachSubmitHandlerToForm called');
   const form = document.getElementById('add-todo');
   form.addEventListener('submit', onAdd);
 }
 
 function onCheckboxClick(event) {
-  console.log('onCheckboxClicked called');
   const completedCountSpan = document.getElementById('completed-count');
   let newCount = parseInt(completedCountSpan.innerText);
   if (event.currentTarget.checked) {
@@ -42,15 +46,38 @@ function onCheckboxClick(event) {
 
 function attachCompletionHandlerToExistingCheckboxes() {
   const checkBoxes = document.getElementsByClassName('checkbox');
-  console.log(checkBoxes);
   for (let checkBox of checkBoxes) {
     checkBox.addEventListener('change', onCheckboxClick);
+  }
+}
+
+function onDelete(event) {
+  const li = event.currentTarget.parentElement;
+  const checkbox = li.getElementsByTagName('input')[0];
+  if (checkbox.checked) {
+    const completedCountSpan = document.getElementById('completed-count');
+    const newCount = parseInt(completedCountSpan.innerText) - 1;
+    completedCountSpan.innerText = newCount;
+  }
+
+  const totalCountSpan = document.getElementById('total-count');
+  const newCount = parseInt(totalCountSpan.innerText) - 1;
+  totalCountSpan.innerText = newCount;
+
+  li.remove();
+}
+
+function addDeleteHandlerToExistingButtons() {
+  const buttons = document.getElementsByClassName('delete');
+  for (let button of buttons) {
+    button.addEventListener('click', onDelete);
   }
 }
 
 function onLoad() {
   attachSubmitHandlerToForm();
   attachCompletionHandlerToExistingCheckboxes();
+  addDeleteHandlerToExistingButtons();
 }
 
 document.addEventListener('load', onLoad); // This actually doesn't work with react-scripts
