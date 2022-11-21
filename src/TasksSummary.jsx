@@ -1,10 +1,10 @@
 import React from 'react';
 
-function TasksSummary() {
+function TasksSummary({completedCount, totalCount}) {
   return (
     <p>
-      Completed <span id="completed-count">3</span> out of
-      <span id="total-count"> 5</span>
+      Completed <span id="completed-count">{completedCount}</span> out of
+      <span id="total-count">{" " + totalCount}</span>
     </p>
   );
 }
