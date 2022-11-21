@@ -2,8 +2,8 @@ import React from 'react';
 
 function Instructions() {
   return (
-    <aside class="max-width-wrapper">
-      <div class="instructions">
+    <aside className="max-width-wrapper">
+      <div className="instructions">
         <p>
           Feel free to play around with all the code here: this is your own
           personal "fork" of our project.

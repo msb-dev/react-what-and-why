@@ -37,7 +37,7 @@ function App() {
     <div>
       <Header />
       <Instructions />
-      <article class="max-width-wrapper">
+      <article className="max-width-wrapper">
         <h2>Tasks</h2>
         <TasksSummary completedCount={getCompletedCount()} totalCount={tasks.length} />
         <TaskList tasks={tasks} toggleComplete={toggleComplete} />
