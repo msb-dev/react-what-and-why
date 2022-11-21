@@ -15,10 +15,6 @@ function onAdd(event) {
 
   const ul = document.getElementById('list');
   ul.appendChild(li);
-
-  const totalCountSpan = document.getElementById('total-count');
-  const newCount = parseInt(totalCountSpan.innerText) + 1;
-  totalCountSpan.innerText = newCount;
 }
 
 function onCheckboxClick(event) {
@@ -40,7 +36,6 @@ function attachCompletionHandlerToExistingCheckboxes() {
 }
 
 function attachSubmitHandlerToForm() {
-  console.log('attachSubmitHandlerToForm called');
   const form = document.getElementById('add-todo');
   form.addEventListener('submit', onAdd);
 }
@@ -53,8 +48,7 @@ function onLoad() {
 document.addEventListener('load', onLoad); // This actually doesn't work with react-scripts
 
 // You wouldn't normally need these lines, but Stackblitz magic makes these necessary
-attachSubmitHandlerToForm();
-attachCompletionHandlerToExistingCheckboxes();
+onLoad();
 
 // Magic to get Stackbliz to pick up stylesheet
 import './style.css';
