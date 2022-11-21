@@ -9,7 +9,7 @@ import AddTask from './AddTask';
 function App() {
   const [tasks, setTasks] = useState([
     {id: "some-random-uuid-1", title: "Start to prepare presentation for Sheffield", isComplete: true},
-    {id: "some-random-uuid-2", title: "Realise it's way too hard", isComplete: false},
+    {id: "some-random-uuid-2", title: "Realise it's way too hard", isComplete: true},
     {id: "some-random-uuid-3", title: "PANIC!!!!!", isComplete: true},
     {id: "some-random-uuid-4", title: "Give presentation", isComplete: false},
     {id: "some-random-uuid-5", title: "Get banned from Sheffield Uni for ever", isComplete: false},
@@ -19,6 +19,16 @@ function App() {
     return tasks.filter(tasks => tasks.isComplete).length
   }
 
+  function toggleComplete(taskId) {
+    const index = tasks.findIndex(task => task.id === taskId)
+
+    setTasks([
+      ...tasks.slice(0, index),
+      {...tasks[index], isComplete: !tasks[index].isComplete},
+      ...tasks.slice(index + 1)
+    ])
+  }
+
   return (
     <div>
       <Header />
@@ -26,7 +36,7 @@ function App() {
       <article class="max-width-wrapper">
         <h2>Tasks</h2>
         <TasksSummary completedCount={getCompletedCount()} totalCount={tasks.length} />
-        <TaskList tasks={tasks} />
+        <TaskList tasks={tasks} toggleComplete={toggleComplete} />
         <AddTask />
       </article>
     </div>
