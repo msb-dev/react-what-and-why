@@ -23,9 +23,9 @@ function TaskList() {
 function Task({id, title, isComplete}) {
   return (
    <li id={id}>
-     <input type="checkbox" class="checkbox" checked={isComplete} />
+     <input type="checkbox" className="checkbox" checked={isComplete} />
      <span>{title}</span>
-     <button class="delete">Delete</button>
+     <button className="delete">Delete</button>
    </li>
   )
 }
