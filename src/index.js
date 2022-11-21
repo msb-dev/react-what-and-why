@@ -1,3 +1,6 @@
+// Magic to get react-scripts to pick up stylesheet
+import './style.css';
+
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
@@ -7,6 +10,3 @@ const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
 root.render(<App />);
-
-// Magic to get react-scripts to pick up stylesheet
-import './style.css';
