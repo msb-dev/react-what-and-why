@@ -15,9 +15,9 @@ function TaskList({tasks, toggleComplete}) {
 function Task({id, title, isComplete, toggleComplete}) {
   return (
    <li id={id}>
-     <input type="checkbox" class="checkbox" checked={isComplete} onChange={() => toggleComplete(id)} />
+     <input type="checkbox" className="checkbox" checked={isComplete} onChange={() => toggleComplete(id)} />
      <span>{title}</span>
-     <button class="delete">Delete</button>
+     <button className="delete">Delete</button>
    </li>
   )
 }
