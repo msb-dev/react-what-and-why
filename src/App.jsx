@@ -33,6 +33,14 @@ function App() {
     setTasks([...tasks, newTask])
   }
 
+  function deleteTask(taskId) {
+    const index = tasks.findIndex(task => task.id === taskId)
+    setTasks([
+      ...tasks.slice(0, index),
+      ...tasks.slice(index + 1)
+    ])
+  }
+
   return (
     <div>
       <Header />
@@ -40,7 +48,7 @@ function App() {
       <article className="max-width-wrapper">
         <h2>Tasks</h2>
         <TasksSummary completedCount={getCompletedCount()} totalCount={tasks.length} />
-        <TaskList tasks={tasks} toggleComplete={toggleComplete} />
+        <TaskList tasks={tasks} toggleComplete={toggleComplete} deleteTask={deleteTask} />
         <AddTask addTask={addTask} />
       </article>
     </div>
