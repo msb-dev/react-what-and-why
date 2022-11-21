@@ -29,6 +29,10 @@ function App() {
     ])
   }
 
+  function addTask(newTask) {
+    setTasks([...tasks, newTask])
+  }
+
   return (
     <div>
       <Header />
@@ -37,7 +41,7 @@ function App() {
         <h2>Tasks</h2>
         <TasksSummary completedCount={getCompletedCount()} totalCount={tasks.length} />
         <TaskList tasks={tasks} toggleComplete={toggleComplete} />
-        <AddTask />
+        <AddTask addTask={addTask} />
       </article>
     </div>
   );
