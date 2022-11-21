@@ -26,7 +26,7 @@ function App() {
         <h2>Tasks</h2>
         <p>
           Completed <span id="completed-count">3</span> out of
-          <span id="total-count">5</span>
+          <span id="total-count"> 5</span>
         </p>
         <ul id="list">
           <li id="some-random-uuid-1">
