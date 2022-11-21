@@ -16,8 +16,157 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown>
+					<script type="text/template">
+						# React: What and _Why_?
+						Matt Brown and Callan Swanson
+
+						[Cambridge Consultants](http://www.cambridgeconsultants.com/careers)
+					</script>
+				</section>
+				<section>
+					<section>
+					<h2>Brief history of the web</h2>
+					<p>Create in 1989 by Tim Berners-Lee whilst working at the CERN physics laboratory</p>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							### In the beginning
+							* Static text documents stored on servers
+							* Used by scientists to discover and share journal articles
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							### Server-side rendering
+							* Pioneered by e-commerce sites
+							* Instead of static HTML files stored on servers, the servers ran programs that created the HTML on-demand, dynamically incorporating data from databases
+							* **Problem:** full page refreshes
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							### AJAX
+							* JavaScript was added to web browsers
+							* Pages could now be modified by JavaScript without needing to request a new page from the server
+							* Still needed a refresh when sending data to the server
+							* `XMLHttpRequest` was added to browsers
+							* Gamechanger: allowed developers to write sites where parts of the page were updated with fresh server data without a full page refreshes
+							* AJAX (Asymmetric JavaScript and XML) was pioneered by Gmail
+
+							**Problem:** _really_ complicated to develop!
+						</script>
+					</section>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Why is AJAX so hard?
+						* You write code (e.g. in python, ruby or Java) on the server to dynamically build web pages when the user submits forms or clicks links, based on data in a database.
+						* This serves up HTML documents that are the starting point.
+						* JavaScript modifies the page away from the original HTML version as the user does stuff. All this logic needs to match what the server would do if the user refreshed the page after all their changes.
+						* You have to consider all the combinations of the things a user could do and update all the relevant parts of the page correctly in every situation. The possible paths through the site grow exponentially with the number of elements the user can interact with.
+						* Let’s see this in action…
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## Imagine you're a new developer on the team of CCToDo.com!
+						* **Task 1:** fix a bug where the completed text doesn't update
+
+						* **Task 2:** implement a new "delete" feature
+						  * Each list item should have a delete button next to it
+						  * Clicking the button should remove the item
+						  * Are we missing anything?
+					</script>
+				</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						## React to the rescue!
+						* JavaScript library created by Facebook in 2013
+						* Open source and free to use
+						* Automates a lot of the complexity of writing an interactive web app
+
+						Note: Don't do exercise here: just show how to move html into JavaScript with JSX. If they haven't followed along, get them to switch to 03-hello-react
+					</script>
+				</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						## JSX?!
+						* Maybe a diagram here to explain how it gets converted to JavaScript by Babel (is this even correct?)
+					</script>
+				</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						## React components
+						* Demonstrate turning task list into a components
+						
+						* **Exercise:** continue splitting out components:
+						  * `Header`
+						  * `Instructions`
+						  * `TasksSummary` (IMPORTANT FOR LATER)
+						  * `TaskList`
+						  * `AddTask`
+					</script>
+				</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						## React props
+						* Props allow us to pass data into a component
+						* Demo creation of generic `<Task />` component with props
+					</script>
+				</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						## React state
+						* Currently, data is spread around the page, trapped in DOM elements
+						* Extract data into simple data structure
+						* Make sure React can track changes to state by using `useState`
+					</script>
+				</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						## Lifting up state
+						* State is always "owned" by a single complement
+						* It can be passed down into child components as props
+						* It can never be passed up
+						* If you need state higher up, move the `useState` to a parent or grandparent component
+						* Only lift it as high as it needs to go
+						* **Exercise:** make the completed count be derived from state
+
+						Note: Show them how to have the total count computed from `tasks.length`
+
+					</script>
+				</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						## Marking tasks complete
+						* Need to listen for change events on the checkboxes and update the `tasks` state using `setTasks` 
+						* **Exercise:** Implement function body of `toggleComplete`
+
+						Note: Demo `toggleComplete` prop drilling, but leave function body for them to implement
+					</script>
+				</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						## Adding new tasks
+						* Need new piece of state in `AddTask` component
+						* Turn `input` into controlled component by specifying `onChange`
+						* Create `handleSubmit` and attach to form's `onSubmit` event
+						* Create new `addTask` function that updates the `tasks` array and pass down into `AddTask`
+						* **Exercise:** Implement function body of `addTask`
+					</script>
+				</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						## Adding new tasks
+						* Need new piece of state in `AddTask` component
+						* Turn `input` into controlled component by specifying `onChange`
+						* Create `handleSubmit` and attach to form's `onSubmit` event
+						* Create new `addTask` function that updates the `tasks` array and pass down into `AddTask`
+						* Spot the deliberate mistake! (Add UUIDS)
+						* **Exercise:** Implement function body of `addTask`
+					</script>
+				</section>
 			</div>
 		</div>
 
