@@ -21,6 +21,24 @@ function onAdd(event) {
   totalCountSpan.innerText = newCount;
 }
 
+function onCheckboxClick(event) {
+  const completedCountSpan = document.getElementById('completed-count');
+  let newCount = parseInt(completedCountSpan.innerText);
+  if (event.currentTarget.checked) {
+    newCount += 1;
+  } else {
+    newCount -= 1;
+  }
+  completedCountSpan.innerText = newCount;
+}
+
+function attachCompletionHandlerToExistingCheckboxes() {
+  const checkBoxes = document.getElementsByClassName('checkbox');
+  for (let checkBox of checkBoxes) {
+    checkBox.addEventListener('change', onCheckboxClick);
+  }
+}
+
 function attachSubmitHandlerToForm() {
   console.log('attachSubmitHandlerToForm called');
   const form = document.getElementById('add-todo');
@@ -28,14 +46,15 @@ function attachSubmitHandlerToForm() {
 }
 
 function onLoad() {
-  console.log('onLooooad called');
+  attachCompletionHandlerToExistingCheckboxes();
   attachSubmitHandlerToForm();
 }
 
 document.addEventListener('load', onLoad); // This actually doesn't work with react-scripts
 
-// This isn't usually needed, but Stackblitz is doing crazy magic that makes this required (and actually means that line 20 doesn't work)
+// You wouldn't normally need these lines, but Stackblitz magic makes these necessary
 attachSubmitHandlerToForm();
+attachCompletionHandlerToExistingCheckboxes();
 
 // Magic to get Stackbliz to pick up stylesheet
 import './style.css';
