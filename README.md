@@ -1,5 +1,9 @@
-# react-aykc5v
+# React: What and _Why_?
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-aykc5v)
+Github repo: https://tinyurl.com/yukz54rp
 
-Foo
+Slides: https://msb-dev.github.io/react-what-and-why
+
+## Task
+
+Check you understand the solution then proceed to the next step: https://stackblitz.com/github/msb-dev/react-what-and-why-03
