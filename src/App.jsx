@@ -32,17 +32,7 @@ function App() {
   }
 
   function toggleComplete(taskId) {
-    const index = tasks.findIndex((task) => task.id === taskId);
-
-    const updatedTasks = tasks.map((task, i) => {
-      if (i === index) {
-        return { ...task, isComplete: !task.isComplete };
-      } else {
-        return task;
-      }
-    });
-
-    setTasks(updatedTasks);
+    // Exercise: implement this!
   }
 
   function toggleComplete(taskId) {
