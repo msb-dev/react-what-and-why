@@ -45,16 +45,6 @@ function App() {
     setTasks(updatedTasks);
   }
 
-  function toggleComplete(taskId) {
-    const index = tasks.findIndex((task) => task.id === taskId);
-
-    setTasks([
-      ...tasks.slice(0, index),
-      { ...tasks[index], isComplete: !tasks[index].isComplete },
-      ...tasks.slice(index + 1),
-    ]);
-  }
-
   return (
     <div>
       <Header />
