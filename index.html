@@ -45,32 +45,56 @@
         </section>
 
         <section>
-          <h2>A brief history</h2>
+          <h2>Housekeeping</h2>
+          <p>
+            Full repo here:
+            <a href="https://tinyurl.com/yukz54rp"
+              >https://tinyurl.com/yukz54rp</a
+            >
+          </p>
+          <p>See the README for a link to the code editor.</p>
+
+          <h3>Questions?</h3>
+          <a href="mailto:matt.brown@cambridgeconsultants.com"
+            >matt.brown@cambridgeconsultants.com</a
+          >
+          or visit our <a href="www.cambridgeconsultants.com">website</a>
+        </section>
+
+        <section>
+          <h2>A brief history of the web</h2>
           <p class="fragment">
-            Computers were huge and there were not many of them
+            Invented by Tim Berners-Lee in 1989 at the CERN particle physics
+            laboratory
           </p>
           <p class="fragment">
-            Scientists needed a way to access informaiton on them
+            Designed to allow scientists to publish articles and connect them
+            with hyperlinks
           </p>
           <p class="fragment">
-            Created in 1989 by Tim Berners-Lee whilst working at the CERN
-            physics laboratory
+            Berners-Lee created
+            <ul class="fragment">
+              <li>a web server</li>
+              <li>web browser</li>
+              <li>HTTP for them to communicate</li>
+              <li>HTML</li> 
           </p>
         </section>
 
         <section>
-          <h2>File stores</h2>
-          <p class="fragment">HTML documents being served by servers</p>
-          <p class="fragment">Viewed as a file system through early browsers</p>
+          <h2>Static pages</h2>
+          <p class="fragment">HTML files were stored on web servers</p>
+          <p class="fragment">A server could be browsed like a file system</p>
+          <p class="fragment">Content was static and read-only</p>
+          <p class="fragment">Life was simple! 😀</p>
+
         </section>
 
         <section>
-          <h2>Server side rendeing</h2>
-          <p class="fragment">User generated data was made possible</p>
-          <p class="fragment">
-            Data could be enterd by the user. The server would return a site
-            that would use this entered data
-          </p>
+          <h2>Server-side rendering</h2>
+          <p class="fragment">Later, user generated data was made possible</p>
+          <p class="fragment">Data could be entered by the user via "forms"</p>
+          <p class="fragment">The server would run code to generate dynamic pages based on the user's data</p>
           <p class="fragment">Problem: full page refreshes</p>
         </section>
 
@@ -81,13 +105,13 @@
             browsers
           </p>
           <p class="fragment">
-            XMLHttpRequests could make requests to get data from servers
+            <code>XMLHttpRequest</code> allowed JavaScript to get and send data to the server
           </p>
           <p class="fragment">
-            User generated data was made possible without full page refreshes
+            Now user generated data was possible without full page refreshes
           </p>
           <p class="fragment">
-            Browser Javascript engines became widely used and more powerful
+            Browsers with JavaScript became widely used and more powerful
           </p>
         </section>
 
@@ -116,22 +140,19 @@
         <section>
           <h2>Lets build!</h2>
 
-          <p class="fragment">JS todo list</p>
+          <p class="fragment">JS to-do list</p>
           <p class="fragment">
-            Use stackblitz for the dev environment:
-            <a href="https://stackblitz.com/edit/react-aykc5v"
-              >https://stackblitz.com/edit/react-aykc5v</a
-            >
+            Open the code here to follow along: <a href="https://tinyurl.com/bde2e2m8">tinyurl.com/bde2e2m8</a>
           </p>
-          <p class="fragment">Find the bug!</p>
+          <p class="fragment">Can you spot the bug?</p>
         </section>
 
         <section>
           <h2>Task</h2>
-          <span style="display: grid; grid-template-columns: 1fr 1fr;">
+          <span style="display: grid; grid-template-columns: 1fr 1fr">
             <span>
               <p class="fragment">
-                Fix a bug where the 'total' text doesn't update
+                Fix the bug where the 'total' text doesn't update
               </p>
               <p class="fragment">
                 <em> Optional: </em>
@@ -157,22 +178,21 @@
           <h2>Vanilla JS problems</h2>
           <p class="fragment">Keeping track of state</p>
           <p class="fragment">
-            DOM manipulation for all elements needing updating
+            DOM manipulation for lots of elements when the state changes
           </p>
           <p class="fragment">
-            Explodes in difficulty when adding new elements to interact with
+            Explosion in difficulty when adding additional interactive elements
           </p>
         </section>
 
         <section>
           <h2>Say hi to React</h2>
           <p class="fragment">
-            A JS library built by Facebook as open source. It is all
-            <a href="https://reactjs.org/">documented</a>!
+            An open-source JS library built by Facebook. It has great <a href="https://reactjs.org/">documentation</a>!
           </p>
-          <p class="fragment">We write HTML in JS files 😆 (Using JSX)</p>
+          <p class="fragment">We write HTML in JS files 😵‍💫 (JSX)</p>
           <p class="fragment">
-            Can update HTML elements on the page using JS variables
+            Can update HTML elements on the page based on values of  JS variables
           </p>
         </section>
 
@@ -202,6 +222,12 @@ function App () {
         </section>
 
         <section>
+          <h2>Components</h2>
+          <h3>Task</h3>
+          <p>Split the rest of the app up into sensibly-named components</p>
+        </section>
+
+        <section>
           <h2>Props</h2>
           <p class="fragment">Props allow us to pass data into a component</p>
           <pre
@@ -209,69 +235,116 @@ function App () {
             class="fragment"
           ><code class="hljs" data-trim data-line-numbers><script type="text/template">
 
-	function Header ({name}) {
-	return <div>Hello {name}</div> 
+	function Header({name}) {
+	  return <div>Hello {name}</div> 
 	}
 	
-	function App () {
-	return <div>
-	<Header name="Matt" />
-	...
-	<Footer />
-	</div>
+	function App() {
+	  return <div>
+	    <Header name="Matt" />
+	    ...
+	    <Footer />
+	  </div>
 	}
 </script></code></pre>
         </section>
 
         <section>
           <h2>State</h2>
-          <p class="fragment">State is a way to house variables in React</p>
+          <p class="fragment">State is a way to store data in React</p>
           <p class="fragment">
-            State gets passed down into child components, it cannot be passed up
+            State gets passed down into child components; it can't be passed up
             the tree
           </p>
           <pre
             data-id="code-animation"
             class="fragment"
           ><code class="hljs" data-trim data-line-numbers><script type="text/template">
-
-	import {useState} from "React";
+import {useState} from "React";
 	
-    function Header ({name}) {
-	return <div>Hello {name}</div> 
-	}
+function Header ({name}) {
+  return <div>Hello {name}</div> 
+}
 	
-	function App () {
-	const myName = useState("Matt");
+function App () {
+	const [myName, setMyName] = useState("Matt");
 	return <div>
-	<Header name={myName} />
-	...
-	<Footer />
+  	<Header name={myName} />
+	  ...
+	  <Footer />
 	</div>
-	}
+}
 </script></code></pre>
         </section>
 
-       <section>
-		<h2>Lifting up state</h2>
-		<p>State is always "owned" by a single complement</p>
-		<p>If you need state higher up, move the useState to a parent or grandparent component</p>
-		<p>Only lift it as high as it needs to go</p>
-	   </section>
+        <section>
+          <h2>Lifting up state</h2>
+          <p>State is always "owned" by a single component</p>
+          <p>
+            If you need state higher up, move the useState to a parent or
+            grandparent component
+          </p>
+          <p>Only lift it as high as it needs to go</p>
+        </section>
 
-	   <section>
-		<h2>Task</h2>
-		<p>Lift the completed count state into a parent component</p>
-		<p>Pass the completed count into the child components that require this variable</p>
-	   </section>
-	   
-	   <section>
-		<h2>Task</h2>
-		<p>We have a way to listen to checkbox onChange events</p>
-		<p>The `tasks` and `setTasks` state is lifted into the parent component</p>
-		<p>Implement the function to toggle the complete state of the checkboxes</p>
-	   </section>
-     
+        <section>
+          <h2>Lifting up state</h2>
+          <h3>Tasks</h3>
+          <ol><li>Lift up state from <code>TaskList</code> to <code>App</code> and pass the <code>tasks</code> state down to <code>TaskList</code> as a prop</li>
+          <li>Switch the task counts from being hard-coded to being <code>TasksSummary</code> props</li>
+          <li>Pass in the total count as <code>tasks.length</code></li>
+          <li>Define a function to calculate the completed count from the tasks array</li>
+        </section>
+
+        <section>
+          <h2>Responding to user events</h2>
+          <h3>Task</h3>
+          <ol>
+            <li>Declare a placeholder <code>toggleComplete</code> function and pass it to <code>TaskList</code></li>
+            <li>Add an <code> onChange</code> handler to the Task checkbox and call <code>toggleComplete</code> when the box is clicked</li>
+            <li>Implement <code>toggleComplete</code></li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>Adding tasks</h2>
+          <p>Follow along as we</p>
+          <ol>
+            <li>create an <code>addTask</code> handler function that can add a given new task to the tasks array</li>
+            <li>pass it into the <code>AddTask</code> component</li>
+            <li>add a handler for the form submit event in <code>AddTask</code> that calls the <code>addTask</code> handler - we must ensure it creates suitably random task IDs!</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>Deleting tasks</h2>
+          <p>See if you can implement task deletion!</p>
+          <p>Hint:</p>
+          <ol>
+            <li>Create a <code>deleteTask</code> function that can remove a task from the tasks array by ID</li>
+            <li>Pass that in as a prop to <code>TaskList</code> and then into each <code>Task</code></li>
+            <li>In <code>Task</code>, add a handler to the delete button's <code>onChange</code> that calls <code>deleteTask</code> with the right ID</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>Thanks for coming!</h2>
+          <p><a href="https://www.cambridgeconsultants.com/case-studies">www.cambridgeconsultants.com/case-studies</a></p>
+          <p><a href="https://www.cambridgeconsultants.com/careers">www.cambridgeconsultants.com/careers</a></p>
+          <br />
+          <p>Questions?</p>
+          <p><a href="mailto:matt.brown@cambridgeconsultants.com">matt.brown@cambridgeconsultants.com</a></p>
+          <img
+            src="./assets/cambridge-consultants-logo.png"
+            alt="reveal.js logo"
+            style="
+              height: 120px;
+              margin: 1rem auto 0 auto;
+              background: transparent;
+            "
+            class="demo-logo"
+          />
+        </section>
       </div>
     </div>
 
