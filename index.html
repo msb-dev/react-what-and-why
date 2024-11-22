@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    <title>reveal.js</title>
+    <title>React: What and Why?</title>
 
     <link rel="stylesheet" href="dist/reset.css" />
     <link rel="stylesheet" href="dist/reveal.css" />
@@ -64,21 +64,38 @@
         <section>
           <h2>A brief history of the web</h2>
           <p class="fragment">
-            Invented by Tim Berners-Lee in 1989 at the CERN particle physics
-            laboratory
+            Invented by Tim Berners-Lee in 1989 at CERN
           </p>
           <p class="fragment">
-            Designed to allow scientists to publish articles and connect them
-            with hyperlinks
+            Designed for publishing and linking articles
           </p>
-          <p class="fragment">
-            Berners-Lee created
-            <ul class="fragment">
-              <li>a web server</li>
-              <li>web browser</li>
-              <li>HTTP for them to communicate</li>
-              <li>HTML</li> 
-          </p>
+
+          <span style="display: grid; grid-template-columns: 1fr 1fr">
+            <span>
+              <p class="fragment">
+              Berners-Lee created:
+              </p>
+              <ul>
+                <li class="fragment">a web server</li>
+                <li class="fragment">a web browser</li>
+                <li class="fragment">HTTP to communicate</li>
+                <li class="fragment">HTML</li>
+              </ul>
+            </span>
+            <span>
+              <figure class="fragment">
+                <img
+                src="./assets/www.jpg"
+                alt="reveal.js logo"
+                style="height: 250px;"
+                class="demo-logo"
+                />
+                <figcaption style="font-size: 14pt;">
+                  Tim Berners-Lee in 1997 with his original web server.
+                </figcaption>
+              </figure>
+            </span>
+          </span>
         </section>
 
         <section>
@@ -86,22 +103,52 @@
           <p class="fragment">HTML files were stored on web servers</p>
           <p class="fragment">A server could be browsed like a file system</p>
           <p class="fragment">Content was static and read-only</p>
-          <p class="fragment">Life was simple! 😀</p>
 
+          <figure class="fragment">
+            <img
+            src="./assets/static-html.jpg"
+            alt="reveal.js logo"
+            style="height: 200px;"
+            class="demo-logo"
+            />
+            <figcaption style="font-size: 14pt;">
+              <a href="https://youtu.be/qGZhhVzLbFI">
+                "Static Website Example" (2012)
+              </a>
+            </figcaption>
+          </figure>
+          <p class="fragment">Life was simple! 😀</p>
         </section>
 
         <section>
           <h2>Server-side rendering</h2>
           <p class="fragment">Later, user generated data was made possible</p>
           <p class="fragment">Data could be entered by the user via "forms"</p>
-          <p class="fragment">The server would run code to generate dynamic pages based on the user's data</p>
-          <p class="fragment">Problem: full page refreshes</p>
+          <span style="display: grid; grid-template-columns: 1fr 1fr">
+            <span>
+            <p class="fragment">The server would run code to generate dynamic pages based on the user's data</p>
+            <p class="fragment">Problem: full page refreshes</p>
+            </span>
+            <span>
+              <figure class="fragment">
+                <img
+                src="./assets/first-facebook.jpg"
+                alt="reveal.js logo"
+                style="height: 250px;"
+                class="demo-logo"
+                />
+                <figcaption style="font-size: 14pt;">
+                  Facebook's landing page in 2004
+                </figcaption>
+              </figure>
+            </span>
+          </span>
         </section>
 
         <section>
           <h2>Javascript</h2>
           <p class="fragment">
-            Websites became interactive. JS can edit the DOM directly within
+            Websites became interactive. JS can edit the DOM (Document Object Model) directly within
             browsers
           </p>
           <p class="fragment">
