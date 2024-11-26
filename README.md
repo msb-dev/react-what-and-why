@@ -11,4 +11,4 @@ Playground for following along: https://stackblitz.com/github/msb-dev/react-what
 - Fix bug where total task count does is not updated with adding tasks
 - (Extension) Add feature so user can delete tasks
 
-**Solution:** https://stackblitz.com/github/msb-dev/react-what-and-why-02
+**Solution:** https://stackblitz.com/github/msb-dev/react-what-and-why/tree/02-plain-js-with-delete
