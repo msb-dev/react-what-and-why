@@ -4,8 +4,8 @@ function Header() {
   return (
     <header>
       <div className="max-width-wrapper header">
-        <img src="https://www.cambridgeconsultants.com/themes/custom/cc_theme/logo-2022-small.svg" />
-        <h1>Hello, Sheffield!</h1>
+        <img src="https://www.cambridgeconsultants.com/wp-content/uploads/2024/10/CC-marque-homepage-blue-2024.png" />
+        <h1>Hello, Manchester!</h1>
       </div>
     </header>
   );

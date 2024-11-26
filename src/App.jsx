@@ -10,7 +10,7 @@ function App() {
   const [tasks, setTasks] = useState([
     {
       id: "some-random-uuid-1",
-      title: "Start to prepare presentation for Sheffield",
+      title: "Start to prepare presentation for Manchester",
       isComplete: true,
     },
     {
@@ -22,7 +22,7 @@ function App() {
     { id: "some-random-uuid-4", title: "Give presentation", isComplete: false },
     {
       id: "some-random-uuid-5",
-      title: "Get banned from Sheffield Uni for ever",
+      title: "Get banned from UoM forever",
       isComplete: false,
     },
   ]);
