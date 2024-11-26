@@ -6,4 +6,4 @@ Slides: https://msb-dev.github.io/react-what-and-why
 
 ## Task
 
-Continue splitting contents of App.js into components. Solution here: https://stackblitz.com/github/msb-dev/react-what-and-why-04.
+Continue splitting contents of App.js into components. Solution here: https://stackblitz.com/github/msb-dev/react-what-and-why/tree/04-split-up-components.
