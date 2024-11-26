@@ -5,7 +5,7 @@ function TaskList() {
     <ul id="list">
       <li id="some-random-uuid-1">
         <input type="checkbox" className="checkbox" checked />
-        <span>Start to prepare presentation for Sheffield</span>
+        <span>Start to prepare presentation for Manchester</span>
         <button className="delete">Delete</button>
       </li>
       <li id="some-random-uuid-2">
@@ -25,7 +25,7 @@ function TaskList() {
       </li>
       <li id="some-random-uuid-5">
         <input type="checkbox" className="checkbox" />
-        <span>Get banned from Sheffield Uni for ever</span>
+        <span>Get banned from UoM forever</span>
         <button className="delete">Delete</button>
       </li>
     </ul>
