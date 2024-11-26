@@ -3,11 +3,11 @@ import React from 'react';
 function TaskList() {
   return (
     <ul id="list">
-      <Task id="some-random-uuid-1" title="Start to prepare presentation for Sheffield" isComplete={true} />
+      <Task id="some-random-uuid-1" title="Start to prepare presentation for Manchester" isComplete={true} />
       <Task id="some-random-uuid-2" title="Realise it's way too hard" isComplete={true} />
       <Task id="some-random-uuid-3" title="PANIC!!!!!" isComplete={true} />
       <Task id="some-random-uuid-4" title="Give presentation" isComplete={false} />
-      <Task id="some-random-uuid-5" title="Get banned from Sheffield Uni for ever" isComplete={false} />
+      <Task id="some-random-uuid-5" title="Get banned from UoM forever" isComplete={false} />
     </ul>
   );
 }
