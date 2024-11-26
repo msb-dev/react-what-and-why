@@ -8,4 +8,4 @@ Slides: https://msb-dev.github.io/react-what-and-why
 
 Finish off the previous exercise by implementing `toggleComplete`
 
-Solution here: https://stackblitz.com/github/msb-dev/react-what-and-why-08.
+Solution here: https://stackblitz.com/github/msb-dev/react-what-and-why/tree/08-mark-tasks-complete.
