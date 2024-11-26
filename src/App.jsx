@@ -5,8 +5,8 @@ function App() {
     <div>
       <header>
         <div className="max-width-wrapper header">
-          <img src="https://www.cambridgeconsultants.com/themes/custom/cc_theme/logo-2022-small.svg" />
-          <h1>Hello, Sheffield!</h1>
+          <img src="https://www.cambridgeconsultants.com/wp-content/uploads/2024/10/CC-marque-homepage-blue-2024.png" />
+          <h1>Hello, Manchester!</h1>
         </div>
       </header>
       <aside className="max-width-wrapper">
@@ -31,7 +31,7 @@ function App() {
         <ul id="list">
           <li id="some-random-uuid-1">
             <input type="checkbox" className="checkbox" checked />
-            <span>Start to prepare presentation for Sheffield</span>
+            <span>Start to prepare presentation for Manchester</span>
             <button className="delete">Delete</button>
           </li>
           <li id="some-random-uuid-1">
@@ -51,7 +51,7 @@ function App() {
           </li>
           <li id="some-random-uuid-1">
             <input type="checkbox" className="checkbox" />
-            <span>Get banned from Sheffield Uni for ever</span>
+            <span>Get banned from UoM forever</span>
             <button className="delete">Delete</button>
           </li>
         </ul>
