@@ -14,7 +14,7 @@ Hint:
 - Pass that in as a prop to `TaskList` and then into each `Task`
 - In `Task`, add a handler to the delete button's `onChange` that calls `deleteTask` with the right ID
 
-Solution here: https://stackblitz.com/github/msb-dev/react-what-and-why-10.
+Solution here: https://stackblitz.com/github/msb-dev/react-what-and-why/tree/10-delete-task.
 
 **Congratulations!**
 
