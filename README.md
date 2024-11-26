@@ -6,4 +6,4 @@ Slides: https://msb-dev.github.io/react-what-and-why
 
 ## Task
 
-Follow along as we use react props to pass state into a component to allow easy code reuse. Finished article here: https://stackblitz.com/github/msb-dev/react-what-and-why-05.
+Follow along as we use react props to pass state into a component to allow easy code reuse. Finished article here: https://stackblitz.com/github/msb-dev/react-what-and-why/tree/05-react-props.
