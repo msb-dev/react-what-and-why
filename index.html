@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    <title>reveal.js</title>
+    <title>React: What and Why?</title>
 
     <link rel="stylesheet" href="dist/reset.css" />
     <link rel="stylesheet" href="dist/reveal.css" />
@@ -22,7 +22,7 @@
         <section>
           <img
             src="./assets/react-logo.png"
-            alt="reveal.js logo"
+            alt="React logo"
             style="
               height: 180px;
               margin: 0 auto 4rem auto;
@@ -34,7 +34,7 @@
           <p>Matt Brown and Callan Swanson</p>
           <img
             src="./assets/cambridge-consultants-logo.png"
-            alt="reveal.js logo"
+            alt="Cambridge Consultants logo"
             style="
               height: 120px;
               margin: 0 auto 4rem auto;
@@ -64,21 +64,41 @@
         <section>
           <h2>A brief history of the web</h2>
           <p class="fragment">
-            Invented by Tim Berners-Lee in 1989 at the CERN particle physics
-            laboratory
+            Invented by Tim Berners-Lee in 1989 at CERN
           </p>
           <p class="fragment">
-            Designed to allow scientists to publish articles and connect them
-            with hyperlinks
+            Designed for publishing and linking articles
           </p>
-          <p class="fragment">
-            Berners-Lee created
-            <ul class="fragment">
-              <li>a web server</li>
-              <li>web browser</li>
-              <li>HTTP for them to communicate</li>
-              <li>HTML</li> 
-          </p>
+
+          <span style="display: grid; grid-template-columns: 1fr 1fr">
+            <span>
+              <p class="fragment">
+              Berners-Lee created:
+              </p>
+              <ul>
+                <li class="fragment">a web server</li>
+                <li class="fragment">a web browser</li>
+                <li class="fragment">HTTP to communicate</li>
+                <li class="fragment">HTML</li>
+              </ul>
+            </span>
+            <span>
+              <figure class="fragment">
+                <img
+                src="./assets/www.jpg"
+                style="height: 250px;"
+                class="demo-logo"
+                />
+                <figcaption style="font-size: 12pt;">
+                  <a href="https://www.flickr.com/photos/scobleizer/2256358640">
+                    "The computer that Tim Berners-Lee used to invent the World Wide Web"
+                  </a>
+                  by Robert Scoble under
+                  <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>
+                </figcaption>
+              </figure>
+            </span>
+          </span>
         </section>
 
         <section>
@@ -86,32 +106,69 @@
           <p class="fragment">HTML files were stored on web servers</p>
           <p class="fragment">A server could be browsed like a file system</p>
           <p class="fragment">Content was static and read-only</p>
-          <p class="fragment">Life was simple! 😀</p>
 
+          <figure class="fragment">
+            <img
+            src="./assets/static-html.png"
+            style="height: 200px;"
+            class="demo-logo"
+            />
+            <figcaption style="font-size: 12pt;">
+              <a href="https://www.csoon.com/">"Coming Soon Magazine"</a>, last updated in 2000
+            </figcaption>
+          </figure>
+          <p class="fragment">Life was simple! 😀</p>
         </section>
 
         <section>
           <h2>Server-side rendering</h2>
           <p class="fragment">Later, user generated data was made possible</p>
           <p class="fragment">Data could be entered by the user via "forms"</p>
-          <p class="fragment">The server would run code to generate dynamic pages based on the user's data</p>
-          <p class="fragment">Problem: full page refreshes</p>
+          <span style="display: grid; grid-template-columns: 1fr 1fr">
+            <span>
+              <figure class="fragment">
+                <img
+                src="./assets/first-facebook.webp"
+                style="height: 250px;"
+                class="demo-logo"
+                />
+                <figcaption style="font-size: 12pt;">
+                  <a href="https://www.freemalaysiatoday.com/category/business/2024/02/01/facebook-the-social-network-old-timer-turns-20/">
+                    Facebook in 2005
+                  </a>
+                  by FMT under
+                  <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY SA 2.0</a>
+                </figcaption>
+              </figure>
+            </span>
+            <span>
+              <p class="fragment">The server would run code to generate dynamic pages based on the user's data</p>
+              <p class="fragment">Problem: full page refreshes</p>
+            </span>
+          </span>
         </section>
 
         <section>
           <h2>Javascript</h2>
+          <span style="display: grid; grid-template-columns: 1fr 2fr">
+            <span>
+              <img
+              src="./assets/js.png"
+              alt="JavaScript logo"
+              style="height: 200px;"
+              class="demo-logo"
+              />
+            </span>
+            <span>
+              <p class="fragment">With the dawn of JavaScript, the web became more interactive</p>
+              <p class="fragment"><code>XMLHttpRequest</code> allowed JS to get and send data to the server</p>
+            </span>
+          </span>
           <p class="fragment">
-            Websites became interactive. JS can edit the DOM directly within
-            browsers
+            Now we could update a page without a full refresh
           </p>
           <p class="fragment">
-            <code>XMLHttpRequest</code> allowed JavaScript to get and send data to the server
-          </p>
-          <p class="fragment">
-            Now user generated data was possible without full page refreshes
-          </p>
-          <p class="fragment">
-            Browsers with JavaScript became widely used and more powerful
+            Browsers with JavaScript became widely used
           </p>
         </section>
 
@@ -162,7 +219,7 @@
             <span>
               <img
                 src="./assets/task1.png"
-                alt="reveal.js logo"
+                alt="task 1"
                 style="
                   height: 420px;
                   margin: 0 auto 4rem auto;
@@ -336,7 +393,7 @@ function App () {
           <p><a href="mailto:matt.brown@cambridgeconsultants.com">matt.brown@cambridgeconsultants.com</a></p>
           <img
             src="./assets/cambridge-consultants-logo.png"
-            alt="reveal.js logo"
+            alt="Cambridge Consultants logo"
             style="
               height: 120px;
               margin: 1rem auto 0 auto;
