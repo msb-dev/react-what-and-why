@@ -15,11 +15,16 @@
 
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    <style>
+      section {
+        text-align: left;
+      }
+    </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <section>
+        <section style="text-align: center" class="center">
           <img
             src="./assets/react-logo.png"
             alt="React logo"
@@ -63,18 +68,12 @@
 
         <section>
           <h2>A brief history of the web</h2>
-          <p class="fragment">
-            Invented by Tim Berners-Lee in 1989 at CERN
-          </p>
-          <p class="fragment">
-            Designed for publishing and linking articles
-          </p>
+          <p>Invented by Tim Berners-Lee in 1989 at CERN</p>
+          <p class="fragment">Designed for publishing and linking articles</p>
 
           <span style="display: grid; grid-template-columns: 1fr 1fr">
             <span>
-              <p class="fragment">
-              Berners-Lee created:
-              </p>
+              <p class="fragment">Berners-Lee created:</p>
               <ul>
                 <li class="fragment">a web server</li>
                 <li class="fragment">a web browser</li>
@@ -83,18 +82,21 @@
               </ul>
             </span>
             <span>
-              <figure class="fragment">
+              <figure>
                 <img
-                src="./assets/www.jpg"
-                style="height: 250px;"
-                class="demo-logo"
+                  src="./assets/www.jpg"
+                  style="height: 250px"
+                  class="demo-logo"
                 />
-                <figcaption style="font-size: 12pt;">
+                <figcaption style="font-size: 12pt">
                   <a href="https://www.flickr.com/photos/scobleizer/2256358640">
-                    "The computer that Tim Berners-Lee used to invent the World Wide Web"
+                    "The computer that Tim Berners-Lee used to invent the World
+                    Wide Web"
                   </a>
                   by Robert Scoble under
-                  <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>
+                  <a href="https://creativecommons.org/licenses/by/2.0/"
+                    >CC BY 2.0</a
+                  >
                 </figcaption>
               </figure>
             </span>
@@ -107,14 +109,15 @@
           <p class="fragment">A server could be browsed like a file system</p>
           <p class="fragment">Content was static and read-only</p>
 
-          <figure class="fragment">
+          <figure class="fragment" style="text-align: center">
             <img
-            src="./assets/static-html.png"
-            style="height: 200px;"
-            class="demo-logo"
+              src="./assets/static-html.png"
+              style="height: 200px"
+              class="demo-logo"
             />
-            <figcaption style="font-size: 12pt;">
-              <a href="https://www.csoon.com/">"Coming Soon Magazine"</a>, last updated in 2000
+            <figcaption style="font-size: 12pt">
+              <a href="https://www.csoon.com/">"Coming Soon Magazine"</a>, last
+              updated in 2000
             </figcaption>
           </figure>
           <p class="fragment">Life was simple! 😀</p>
@@ -128,21 +131,28 @@
             <span>
               <figure class="fragment">
                 <img
-                src="./assets/first-facebook.webp"
-                style="height: 250px;"
-                class="demo-logo"
+                  src="./assets/first-facebook.webp"
+                  style="height: 250px"
+                  class="demo-logo"
                 />
-                <figcaption style="font-size: 12pt;">
-                  <a href="https://www.freemalaysiatoday.com/category/business/2024/02/01/facebook-the-social-network-old-timer-turns-20/">
+                <figcaption style="font-size: 12pt">
+                  <a
+                    href="https://www.freemalaysiatoday.com/category/business/2024/02/01/facebook-the-social-network-old-timer-turns-20/"
+                  >
                     Facebook in 2005
                   </a>
                   by FMT under
-                  <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY SA 2.0</a>
+                  <a href="https://creativecommons.org/licenses/by-sa/2.0/"
+                    >CC BY SA 2.0</a
+                  >
                 </figcaption>
               </figure>
             </span>
             <span>
-              <p class="fragment">The server would run code to generate dynamic pages based on the user's data</p>
+              <p class="fragment">
+                The server would run code to generate dynamic pages based on the
+                user's data
+              </p>
               <p class="fragment">Problem: full page refreshes</p>
             </span>
           </span>
@@ -153,45 +163,60 @@
           <span style="display: grid; grid-template-columns: 1fr 2fr">
             <span>
               <img
-              src="./assets/js.png"
-              alt="JavaScript logo"
-              style="height: 200px;"
-              class="demo-logo"
+                src="./assets/js.png"
+                alt="JavaScript logo"
+                style="height: 200px"
+                class="demo-logo"
               />
             </span>
             <span>
-              <p class="fragment">With the dawn of JavaScript, the web became more interactive</p>
-              <p class="fragment"><code>XMLHttpRequest</code> allowed JS to get and send data to the server</p>
+              <p class="fragment">
+                With the dawn of JavaScript, the web became more interactive
+              </p>
+              <p class="fragment">
+                <code>XMLHttpRequest</code> allowed JS to get and send data to
+                the server
+              </p>
             </span>
           </span>
           <p class="fragment">
             Now we could update a page without a full refresh
           </p>
-          <p class="fragment">
-            Browsers with JavaScript became widely used
-          </p>
+          <p class="fragment">Browsers with JavaScript became widely used</p>
         </section>
 
         <section>
           <h2>JS DOM manipulation</h2>
 
-          <p>Accessing an element</p>
+          <p>Manipulating an element</p>
           <pre
             data-id="code-animation"
           ><code class="hljs" data-trim data-line-numbers>
-			  const checkbox = document.createElement('input');
-			  const textbox = document.getElementById('textbox');
+            // Get a reference to the element you want to modify
+            const textbox = document.getElementById('query-textbox');
+            // or e.g. document.querySelector('textbox.someClass')
+
+            // Mutate the `value` or `innerHTML`
+            textbox.value = 'hello, world!';
 		</code></pre>
 
           <span class="fragment">
-            <p>Updating an element</p>
+            <p>Adding an element</p>
             <pre
               data-id="code-animation"
-            ><code class="hljs" data-trim data-line-numbers="|1|2|">
-				const textbox = document.getElementById('textbox');
-				textbox.value = 'Hello World!';
+            ><code class="hljs" data-trim data-line-numbers>
+            // Create the element you want to insert
+            const listItem = document.createElement('li');
+            li.value = 'Some text';
+
+            // Get the container you want to insert new element into
+            const list = document.getElementById('main-list');
+
+            // Append the element to the container
+            list.append(listItem);
 			</code></pre>
           </span>
+          <aside class="notes">Some notes FOOOOOOOOO</aside>
         </section>
 
         <section>
@@ -199,24 +224,45 @@
 
           <p class="fragment">JS to-do list</p>
           <p class="fragment">
-            Open the code here to follow along: <a href="https://tinyurl.com/bde2e2m8">tinyurl.com/bde2e2m8</a>
+            Open the code here to follow along:
+            <a href="https://tinyurl.com/bde2e2m8">tinyurl.com/bde2e2m8</a>
           </p>
-          <p class="fragment">Can you spot the bug?</p>
+          <p class="fragment">
+            Check out the README for a link to the solution of each exercise or
+            follow-along section
+          </p>
         </section>
 
         <section>
-          <h2>Task</h2>
-          <span style="display: grid; grid-template-columns: 1fr 1fr">
-            <span>
-              <p class="fragment">
-                Fix the bug where the 'total' text doesn't update
-              </p>
+          <h2>Exercise 1</h2>
+          <div style="display: grid; grid-template-columns: 1fr 1fr">
+            <div style="text-align: left">
+              <p>Fix the bug where the 'total' text doesn't update</p>
               <p class="fragment">
                 <em> Optional: </em>
                 Add in a 'Delete' button to remove a task from the list
               </p>
-            </span>
-            <span>
+              <aside class="fragment">
+                <p>
+                  <small
+                    >Start:
+                    <a href="stackblitz.com/github/msb-dev/react-what-and-why"
+                      >stackblitz.com/github/msb-dev/react-what-and-why</a
+                    ></small
+                  >
+                </p>
+                <p>
+                  <small
+                    >Solution:
+                    <a
+                      href="https://stackblitz.com/github/msb-dev/react-what-and-why/tree/02-plain-js-with-delete"
+                      >stackblitz.com/github/msb-dev/react-what-and-why/tree/02-plain-js-with-delete</a
+                    ></small
+                  >
+                </p>
+              </aside>
+            </div>
+            <div style="text-align: center">
               <img
                 src="./assets/task1.png"
                 alt="task 1"
@@ -225,10 +271,10 @@
                   margin: 0 auto 4rem auto;
                   background: transparent;
                 "
-                class="demo-logo fragment"
+                class="demo-logo"
               />
-            </span>
-          </span>
+            </div>
+          </div>
         </section>
 
         <section>
@@ -245,11 +291,12 @@
         <section>
           <h2>Say hi to React</h2>
           <p class="fragment">
-            An open-source JS library built by Facebook. It has great <a href="https://reactjs.org/">documentation</a>!
+            An open-source JS library built by Facebook. It has great
+            <a href="https://reactjs.org/">documentation</a>!
           </p>
           <p class="fragment">We write HTML in JS files 😵‍💫 (JSX)</p>
           <p class="fragment">
-            Can update HTML elements on the page based on values of  JS variables
+            Can update HTML elements on the page based on values of JS variables
           </p>
         </section>
 
@@ -279,9 +326,49 @@ function App () {
         </section>
 
         <section>
-          <h2>Components</h2>
-          <h3>Task</h3>
+          <h2>Components: follow along!</h2>
+          <p>
+            Let's split the header of the to-do list into its own component...
+          </p>
+          <aside class="fragment">
+            <small
+              >Start:
+              <a
+                href="https://stackblitz.com/github/msb-dev/react-what-and-why/tree/03-hello-react"
+                >stackblitz.com/github/msb-dev/react-what-and-why/tree/03-hello-react</a
+              ></small
+            >
+            <br />
+            <small
+              >Solution:
+              <a
+                href="https://stackblitz.com/github/msb-dev/react-what-and-why/tree/03b-hello-react"
+                >stackblitz.com/github/msb-dev/react-what-and-why/tree/03b-hello-react</a
+              ></small
+            >
+          </aside>
+        </section>
+
+        <section>
+          <h2>Components: Exercise</h2>
           <p>Split the rest of the app up into sensibly-named components</p>
+          <aside class="fragment">
+            <small
+              >Start:
+              <a
+                href="http://stackblitz.com/github/msb-dev/react-what-and-why/tree/03b-hello-react"
+                >stackblitz.com/github/msb-dev/react-what-and-why/tree/03b-hello-react</a
+              ></small
+            >
+            <br />
+            <small
+              >Solution:
+              <a
+                href="https://stackblitz.com/github/msb-dev/react-what-and-why/tree/04-split-up-components"
+                >stackblitz.com/github/msb-dev/react-what-and-why/tree/04-split-up-components</a
+              ></small
+            >
+          </aside>
         </section>
 
         <section>
@@ -304,6 +391,31 @@ function App () {
 	  </div>
 	}
 </script></code></pre>
+        </section>
+
+        <section>
+          <h2>Props: follow along!</h2>
+          <p>
+            Follow along as we use react props to pass information into a
+            dynamic component to allow easy code reuse
+          </p>
+          <aside class="fragment">
+            <small
+              >Start:
+              <a
+                href="https://stackblitz.com/github/msb-dev/react-what-and-why/tree/04-split-up-components"
+                >stackblitz.com/github/msb-dev/react-what-and-why/tree/04-split-up-components</a
+              ></small
+            >
+            <br />
+            <small
+              >Solution:
+              <a
+                href="https://stackblitz.com/github/msb-dev/react-what-and-why/tree/05-react-props"
+                >stackblitz.com/github/msb-dev/react-what-and-why/tree/05-react-props</a
+              ></small
+            >
+          </aside>
         </section>
 
         <section>
@@ -335,62 +447,224 @@ function App () {
         </section>
 
         <section>
+          <h2>State: follow along!</h2>
+          <p>
+            Follow along as we pull our data out of the DOM and into a simple
+            JavaScript data structure, using React state
+          </p>
+          <aside class="fragment">
+            <small
+              >Start:
+              <a
+                href="https://stackblitz.com/github/msb-dev/react-what-and-why/tree/05-react-props"
+                >stackblitz.com/github/msb-dev/react-what-and-why/tree/05-react-props</a
+              ></small
+            >
+            <br />
+            <small
+              >Solution:
+              <a
+                href="http://stackblitz.com/github/msb-dev/react-what-and-why/tree/06-react-state"
+                >stackblitz.com/github/msb-dev/react-what-and-why/tree/06-react-state</a
+              ></small
+            >
+          </aside>
+        </section>
+
+        <section>
           <h2>Lifting up state</h2>
           <p>State is always "owned" by a single component</p>
           <p>
-            If you need state higher up, move the useState to a parent or
-            grandparent component
+            If you need state higher up, move the <code>useState</code> to a
+            parent or grandparent component
           </p>
           <p>Only lift it as high as it needs to go</p>
         </section>
 
         <section>
-          <h2>Lifting up state</h2>
-          <h3>Tasks</h3>
-          <ol><li>Lift up state from <code>TaskList</code> to <code>App</code> and pass the <code>tasks</code> state down to <code>TaskList</code> as a prop</li>
-          <li>Switch the task counts from being hard-coded to being <code>TasksSummary</code> props</li>
-          <li>Pass in the total count as <code>tasks.length</code></li>
-          <li>Define a function to calculate the completed count from the tasks array</li>
+          <h2>Exercise: lifting up state</h2>
+          <ol>
+            <li>
+              Lift up state from <code>TaskList</code> to <code>App</code> and
+              pass the <code>tasks</code> state down to <code>TaskList</code> as
+              a prop
+            </li>
+            <li>
+              Switch the task counts from being hard-coded to being
+              <code>TasksSummary</code> props
+            </li>
+            <li>Pass in the total count as <code>tasks.length</code></li>
+            <li>
+              Define a function to calculate the completed count from the tasks
+              array
+            </li>
+          </ol>
+          <aside class="fragment" style="margin-top: 36px">
+            <small
+              >Start:
+              <a
+                href="https://stackblitz.com/github/msb-dev/react-what-and-why/tree/06-react-state"
+                >stackblitz.com/github/msb-dev/react-what-and-why/tree/06-react-state</a
+              ></small
+            >
+            <br />
+            <small
+              >Solution:
+              <a
+                href="https://stackblitz.com/github/msb-dev/react-what-and-why/tree/07-lifting-state-up"
+                >stackblitz.com/github/msb-dev/react-what-and-why/tree/07-lifting-state-up</a
+              ></small
+            >
+          </aside>
         </section>
 
         <section>
           <h2>Responding to user events</h2>
-          <h3>Task</h3>
+          <p>Follow along as we...</p>
           <ol>
-            <li>Declare a placeholder <code>toggleComplete</code> function and pass it to <code>TaskList</code></li>
-            <li>Add an <code> onChange</code> handler to the Task checkbox and call <code>toggleComplete</code> when the box is clicked</li>
-            <li>Implement <code>toggleComplete</code></li>
+            <li>
+              Declare a placeholder <code>toggleComplete</code> function and
+              pass it to <code>TaskList</code>
+            </li>
+            <li>
+              Add an <code> onChange</code> handler to the Task checkbox and
+              call <code>toggleComplete</code> when the box is clicked
+            </li>
           </ol>
+          <aside class="fragment" style="margin-top: 36px">
+            <small
+              >Start:
+              <a
+                href="https://stackblitz.com/github/msb-dev/react-what-and-why/tree/07-lifting-state-up"
+                >stackblitz.com/github/msb-dev/react-what-and-why/tree/07-lifting-state-up</a
+              ></small
+            >
+            <br />
+            <small
+              >Solution:
+              <a
+                href="https://stackblitz.com/github/msb-dev/react-what-and-why/tree/07b-lifting-state-up"
+                >stackblitz.com/github/msb-dev/react-what-and-why/tree/07b-lifting-state-up</a
+              ></small
+            >
+          </aside>
+        </section>
+
+        <section>
+          <h2>Exercise: Responding to user events</h2>
+          <p>
+            Finish off the previous slide by implementing
+            <code>toggleComplete</code>
+          </p>
+          <aside style="margin-top: 36px">
+            <small
+              >Start:
+              <a
+                href="https://stackblitz.com/github/msb-dev/react-what-and-why/tree/07b-lifting-state-up"
+                >stackblitz.com/github/msb-dev/react-what-and-why/tree/07b-lifting-state-up</a
+              ></small
+            >
+            <br />
+            <small
+              >Solution:
+              <a
+                href="https://stackblitz.com/github/msb-dev/react-what-and-why/tree/08-mark-tasks-complete"
+                >stackblitz.com/github/msb-dev/react-what-and-why/tree/08-mark-tasks-complete</a
+              ></small
+            >
+          </aside>
         </section>
 
         <section>
           <h2>Adding tasks</h2>
           <p>Follow along as we</p>
           <ol>
-            <li>create an <code>addTask</code> handler function that can add a given new task to the tasks array</li>
+            <li>
+              create an <code>addTask</code> handler function that can add a
+              given new task to the tasks array
+            </li>
             <li>pass it into the <code>AddTask</code> component</li>
-            <li>add a handler for the form submit event in <code>AddTask</code> that calls the <code>addTask</code> handler - we must ensure it creates suitably random task IDs!</li>
+            <li>
+              add a handler for the form submit event in
+              <code>AddTask</code> that calls the <code>addTask</code> handler -
+              we must ensure it creates suitably random task IDs!
+            </li>
           </ol>
+          <aside style="margin-top: 36px">
+            <small
+              >Start:
+              <a
+                href="https://stackblitz.com/github/msb-dev/react-what-and-why/tree/08-mark-tasks-complete"
+                >stackblitz.com/github/msb-dev/react-what-and-why/tree/08-mark-tasks-complete</a
+              ></small
+            >
+            <br />
+            <small
+              >Solution:
+              <a
+                href="https://stackblitz.com/github/msb-dev/react-what-and-why/tree/09-add-task"
+                >stackblitz.com/github/msb-dev/react-what-and-why/tree/09-add-task</a
+              ></small
+            >
+          </aside>
         </section>
 
         <section>
-          <h2>Deleting tasks</h2>
+          <h2>Exercise: deleting tasks</h2>
           <p>See if you can implement task deletion!</p>
-          <p>Hint:</p>
           <ol>
-            <li>Create a <code>deleteTask</code> function that can remove a task from the tasks array by ID</li>
-            <li>Pass that in as a prop to <code>TaskList</code> and then into each <code>Task</code></li>
-            <li>In <code>Task</code>, add a handler to the delete button's <code>onChange</code> that calls <code>deleteTask</code> with the right ID</li>
+            <li>
+              Create a <code>deleteTask</code> function that can remove a task
+              from the tasks array by ID
+            </li>
+            <li>
+              Pass that in as a prop to <code>TaskList</code> and then into each
+              <code>Task</code>
+            </li>
+            <li>
+              In <code>Task</code>, add a handler to the delete button's
+              <code>onChange</code> that calls <code>deleteTask</code> with the
+              right ID
+            </li>
           </ol>
+          <aside style="margin-top: 36px">
+            <small
+              >Start:
+              <a
+                href="https://stackblitz.com/github/msb-dev/react-what-and-why/tree/09-add-task"
+                >stackblitz.com/github/msb-dev/react-what-and-why/tree/09-add-task</a
+              ></small
+            >
+            <br />
+            <small
+              >Solution:
+              <a
+                href="https://stackblitz.com/github/msb-dev/react-what-and-why/tree/10-delete-task"
+                >stackblitz.com/github/msb-dev/react-what-and-why/tree/10-delete-task</a
+              ></small
+            >
+          </aside>
         </section>
 
         <section>
           <h2>Thanks for coming!</h2>
-          <p><a href="https://www.cambridgeconsultants.com/case-studies">www.cambridgeconsultants.com/case-studies</a></p>
-          <p><a href="https://www.cambridgeconsultants.com/careers">www.cambridgeconsultants.com/careers</a></p>
+          <p>
+            <a href="https://www.cambridgeconsultants.com/case-studies"
+              >www.cambridgeconsultants.com/case-studies</a
+            >
+          </p>
+          <p>
+            <a href="https://www.cambridgeconsultants.com/careers"
+              >www.cambridgeconsultants.com/careers</a
+            >
+          </p>
           <br />
           <p>Questions?</p>
-          <p><a href="mailto:matt.brown@cambridgeconsultants.com">matt.brown@cambridgeconsultants.com</a></p>
+          <p>
+            <a href="mailto:matt.brown@cambridgeconsultants.com"
+              >matt.brown@cambridgeconsultants.com</a
+            >
+          </p>
           <img
             src="./assets/cambridge-consultants-logo.png"
             alt="Cambridge Consultants logo"
@@ -418,6 +692,7 @@ function App () {
 
         // Learn about plugins: https://revealjs.com/plugins/
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+        center: false,
       });
     </script>
   </body>
