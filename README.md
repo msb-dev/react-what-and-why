@@ -11,4 +11,4 @@ Follow along as we
 - declare a placeholder `toggleComplete` function and pass it in to `TaskList`
 - add an `onChange` handler to the task checkbox and call the `toggleComplete` handler then the box is clicked
 
-The finished code for the above is here: https://stackblitz.com/github/msb-dev/react-what-and-why-07b.
+The finished code for the above is here: https://stackblitz.com/github/msb-dev/react-what-and-why/tree/07b-lifting-state-up.
