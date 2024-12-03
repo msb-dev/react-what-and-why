@@ -63,7 +63,8 @@
           <a href="mailto:matt.brown@cambridgeconsultants.com"
             >matt.brown@cambridgeconsultants.com</a
           >
-          or visit our <a href="https://www.cambridgeconsultants.com">website</a>
+          or visit our
+          <a href="https://www.cambridgeconsultants.com">website</a>
         </section>
 
         <section>
@@ -242,11 +243,12 @@
                 <em> Optional: </em>
                 Add in a 'Delete' button to remove a task from the list
               </p>
-              <aside class="fragment">
+              <aside>
                 <p>
                   <small
                     >Start:
-                    <a href="https://stackblitz.com/github/msb-dev/react-what-and-why"
+                    <a
+                      href="https://stackblitz.com/github/msb-dev/react-what-and-why"
                       >stackblitz.com/github/msb-dev/react-what-and-why</a
                     ></small
                   >
@@ -330,7 +332,7 @@ function App () {
           <p>
             Let's split the header of the to-do list into its own component...
           </p>
-          <aside class="fragment">
+          <aside>
             <small
               >Start:
               <a
@@ -347,12 +349,37 @@ function App () {
               ></small
             >
           </aside>
+          <aside class="notes">
+            <ul>
+              <li>Show index.html and show it just has the root div</li>
+              <li>
+                Should be a script import for index.js, but Stackblitz is magic
+                and puts this in automatically
+              </li>
+              <li>
+                index.js imports stuff from React, which is just a bunch of JS
+                code written by Facebook
+              </li>
+              <li>
+                Once told about the root div, React calls the App component
+                function to figure out what DOM elements to render inside
+              </li>
+              <li>
+                Go to app.js and point out that it's mainly identical to our
+                previous HTML (except class => className)
+              </li>
+              <li>
+                JSX is an extension to JS that Stackblitz turns into a normal JS
+                that can run in your browser.
+              </li>
+            </ul>
+          </aside>
         </section>
 
         <section>
           <h2>Components: Exercise</h2>
           <p>Split the rest of the app up into sensibly-named components</p>
-          <aside class="fragment">
+          <aside>
             <small
               >Start:
               <a
@@ -391,6 +418,22 @@ function App () {
 	  </div>
 	}
 </script></code></pre>
+          <aside class="notes">
+            <ul>
+              <li>
+                Point out that React components are (almost) just functions
+              </li>
+              <li>
+                Functions are useful because the code they contain can be
+                defined once and used multiple times
+              </li>
+              <li>
+                Just like functions can take arguments to make them more
+                flexible and dynamic, so can components (but a component takes a
+                single object argument which we add properties ["props"] to)
+              </li>
+            </ul>
+          </aside>
         </section>
 
         <section>
@@ -399,7 +442,7 @@ function App () {
             Follow along as we use react props to pass information into a
             dynamic component to allow easy code reuse
           </p>
-          <aside class="fragment">
+          <aside>
             <small
               >Start:
               <a
@@ -422,8 +465,8 @@ function App () {
           <h2>State</h2>
           <p class="fragment">State is a way to store data in React</p>
           <p class="fragment">
-            State gets passed down into child components; it can't be passed up
-            the tree
+            State gets passed down (via props) into child components; it can't
+            be passed up the tree
           </p>
           <pre
             data-id="code-animation"
@@ -444,6 +487,29 @@ function App () {
 	</div>
 }
 </script></code></pre>
+          <aside class="notes">
+            <ul>
+              <li>
+                useState returns an array. First element is the state itself;
+                second element is a function you can call to set the state.
+              </li>
+              <li>
+                Always set state using the setter so React knows the state has
+                changed and that it should call your componet functions again to
+                see if anything needs rerendering
+              </li>
+              <li>
+                When state changes and React calls your component functions,
+                these return what the DOM elements on your page should look like
+                now
+              </li>
+              <li>
+                React compares this "desired state" with what's currently in the
+                DOM and then only changes the DOM elements that need changing to
+                bring the DOM into line.
+              </li>
+            </ul>
+          </aside>
         </section>
 
         <section>
@@ -452,7 +518,7 @@ function App () {
             Follow along as we pull our data out of the DOM and into a simple
             JavaScript data structure, using React state
           </p>
-          <aside class="fragment">
+          <aside>
             <small
               >Start:
               <a
@@ -531,7 +597,7 @@ function App () {
               call <code>toggleComplete</code> when the box is clicked
             </li>
           </ol>
-          <aside class="fragment" style="margin-top: 36px">
+          <aside style="margin-top: 36px">
             <small
               >Start:
               <a
