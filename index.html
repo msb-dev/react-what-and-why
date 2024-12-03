@@ -108,20 +108,25 @@
           <h2>Static pages</h2>
           <p class="fragment">HTML files were stored on web servers</p>
           <p class="fragment">A server could be browsed like a file system</p>
-          <p class="fragment">Content was static and read-only</p>
 
-          <figure class="fragment" style="text-align: center">
-            <img
-              src="./assets/static-html.png"
-              style="height: 200px"
-              class="demo-logo"
-            />
-            <figcaption style="font-size: 12pt">
-              <a href="https://www.csoon.com/">"Coming Soon Magazine"</a>, last
-              updated in 2000
-            </figcaption>
-          </figure>
-          <p class="fragment">Life was simple! 😀</p>
+          <span style="display: grid; grid-template-columns: 2fr 1fr">
+            <span>
+              <p class="fragment">Content was static and read-only</p>
+              <p class="fragment">Life was simple! 😀</p>
+            </span>
+            <span>
+              <figure class="fragment" style="text-align: center">
+                <img
+                  src="./assets/static-html.png"
+                  style="height: 300px"
+                  class="demo-logo"
+                />
+                <figcaption style="font-size: 12pt">
+                  <a href="https://www.csoon.com/">"Coming Soon Magazine"</a>, last
+                  updated in 2000
+                </figcaption>
+              </figure>
+            </span>
         </section>
 
         <section>
@@ -238,7 +243,7 @@
           <div style="display: grid; grid-template-columns: 1fr 1fr">
             <div style="text-align: left">
               <p>Fix the bug where the 'total' text doesn't update</p>
-              <p class="fragment">
+              <p>
                 <em> Optional: </em>
                 Add in a 'Delete' button to remove a task from the list
               </p>
@@ -298,6 +303,9 @@
           <p class="fragment">We write HTML in JS files 😵‍💫 (JSX)</p>
           <p class="fragment">
             Can update HTML elements on the page based on values of JS variables
+          </p>
+          <p class="fragment">
+            <a href="https://d1o2zbegcs1d7n.cloudfront.net/">React product example by James</a>
           </p>
         </section>
 
@@ -538,12 +546,12 @@ function App () {
 
         <section>
           <h2>Lifting up state</h2>
-          <p>State is always "owned" by a single component</p>
-          <p>
+          <p class="fragment">State is always "owned" by a single component</p>
+          <p class="fragment">
             If you need state higher up, move the <code>useState</code> to a
             parent or grandparent component
           </p>
-          <p>Only lift it as high as it needs to go</p>
+          <p class="fragment">Only lift it as high as it needs to go</p>
         </section>
 
         <section>
@@ -564,7 +572,7 @@ function App () {
               array
             </li>
           </ol>
-          <aside class="fragment" style="margin-top: 36px">
+          <aside style="margin-top: 36px">
             <small
               >Start:
               <a
