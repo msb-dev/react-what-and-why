@@ -38,11 +38,11 @@ function App() {
   }
 
   function deleteTask(taskId) {
-    const index = tasks.findIndex(task => task.id === taskId)
-    setTasks([
-      ...tasks.slice(0, index),
-      ...tasks.slice(index + 1)
-    ])
+    const filteredTasks = tasks.filter((task) => {
+      return task.id !== taskId;
+    });
+
+    setTasks(filteredTasks);
   }
 
   return (
