@@ -20,10 +20,8 @@ function App() {
   }
 
   function toggleComplete(taskId) {
-    const index = tasks.findIndex((task) => task.id === taskId);
-
-    const updatedTasks = tasks.map((task, i) => {
-      if (i === index) {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === taskId) {
         return { ...task, isComplete: !task.isComplete };
       } else {
         return task;
